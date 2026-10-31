@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sabbir Bot</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f1f5f9;
+  color: #172033;
+  padding: 18px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.header h2 { color: #1689d4; }
+
+.profile {
+  background: white;
+  padding: 18px;
+  border-radius: 15px;
+  margin-bottom: 18px;
+}
+
+.balance {
+  background: linear-gradient(135deg,#1689d4,#0756a8);
+  color: white;
+  padding: 25px;
+  border-radius: 18px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.balance h1 {
+  font-size: 32px;
+  margin-top: 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.card {
+  background: white;
+  padding: 20px 12px;
+  text-align: center;
+  border-radius: 15px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: 12px;
+  border-radius: 9px;
+  width: 100%;
+  margin-top: 12px;
+  background: #1689d4;
+  color: white;
+  font-size: 14px;
+}
+
+.withdraw {
+  background: #16a34a;
+  padding: 15px;
+  margin-top: 18px;
+  font-size: 16px;
+}
+
+.note {
+  text-align: center;
+  color: #64748b;
+  font-size: 12px;
+  margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <h2>💎 Sabbir Bot</h2>
+  <span>🌐 EN</span>
+</div>
+
+<div class="profile">
+  <h3 id="username">Welcome User!</h3>
+  <p>Your Earning Account</p>
+</div>
+
+<div class="balance">
+  <p>💰 Total Balance</p>
+  <h1 id="balance">$0.00</h1>
+</div>
+
+<div class="grid">
+
+  <div class="card">
+    <h3>📺 Watch Ads</h3>
+    <p>Watch advertisements</p>
+    <button onclick="watchAds()">Watch Now</button>
+  </div>
+
+  <div class="card">
+    <h3>🎁 Daily Bonus</h3>
+    <p>Daily reward</p>
+    <button onclick="dailyBonus()">Claim</button>
+  </div>
+
+  <div class="card">
+    <h3>👥 Referral</h3>
+    <p>Invite your friends</p>
+    <button onclick="referral()">Invite</button>
+  </div>
+
+  <div class="card">
+    <h3>💳 Withdraw</h3>
+    <p>Request payment</p>
+    <button onclick="withdraw()">Withdraw</button>
+  </div>
+
+</div>
+
+<button class="withdraw" onclick="withdraw()">
+  💸 Request Withdrawal
+</button>
+
+<p class="note">Powered by Sabbir Bot</p>
+
+<script>
+const tg = window.Telegram.WebApp;
+
+tg.ready();
+tg.expand();
+
+const user = tg.initDataUnsafe?.user;
+
+if (user) {
+  document.getElementById("username").innerText =
+    "Welcome, " + user.first_name;
+}
+
+function watchAds() {
+  alert("Advertisement system coming soon!");
+}
+
+function dailyBonus() {
+  alert("Daily bonus system coming soon!");
+}
+
+function referral() {
+  const link = "https://t.me/Sabbir_Earning_Bot";
+  tg.openTelegramLink(link);
+}
+
+function withdraw() {
+  alert("Withdrawal system coming soon!");
+}
+</script>
+
+</body>
+</html>
